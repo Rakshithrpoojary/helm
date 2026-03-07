@@ -3,8 +3,8 @@ backend:
   replicaCount: 1
 
   image:
-    repository: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecommbackend
-    tag: "9"
+    repository: 518283888975.dkr.ecr.ap-south-1.amazonaws.com/chat-backend
+    tag: "4"
     pullPolicy: Always
 
   containerPort: 4000

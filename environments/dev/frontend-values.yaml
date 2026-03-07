@@ -3,8 +3,8 @@ frontend:
   replicaCount: 1
 
   image:
-    repository: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecomfront
-    tag: "53"
+    repository: 518283888975.dkr.ecr.ap-south-1.amazonaws.com/chat-frontend
+    tag: "5"
     pullPolicy: Always
 
   containerPort: 80
