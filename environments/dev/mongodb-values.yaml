@@ -24,7 +24,7 @@ mongo:
   persistence:
     enabled: true
     accessMode: ReadWriteOnce
-    storageClass: gp2
+    storageClass: gp3
     size: 5Gi
 
   volumeMountPath: /data/db
