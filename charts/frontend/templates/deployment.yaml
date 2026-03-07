@@ -19,6 +19,7 @@ spec:
       labels:
         role: {{ .Values.frontend.labels.role }}
     spec:
+      serviceAccountName: secretmanager
       containers:
         - name: frontend
           image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
