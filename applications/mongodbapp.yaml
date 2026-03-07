@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Rakshithrpoojary/helm.git
     targetRevision: HEAD
-    path: charts/mongodb
+    path: charts/database
     helm:
       valueFiles:
         - ../../environments/dev/mongodb-values.yaml
