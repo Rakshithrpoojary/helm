@@ -1,0 +1,24 @@
+backend:
+
+  replicaCount: 1
+
+  image:
+    repository: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecommbackend
+    tag: "9"
+    pullPolicy: Always
+
+  containerPort: 4000
+
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 4000
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+
+  labels:
+    role: backend

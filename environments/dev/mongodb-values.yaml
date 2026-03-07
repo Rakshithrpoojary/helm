@@ -1,0 +1,30 @@
+mongo:
+  name: mongo
+  appLabel: mongodb
+
+  replicaCount: 4
+
+  image:
+    repository: mongo
+    tag: "4.4.6"
+    pullPolicy: IfNotPresent
+
+  containerPort: 27017
+
+  headlessService:
+    name: mongo
+    port: 27017
+
+  service:
+    name: mongodb-svc
+    type: ClusterIP
+    port: 27017
+    targetPort: 27017
+
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    storageClass: gp2
+    size: 5Gi
+
+  volumeMountPath: /data/db

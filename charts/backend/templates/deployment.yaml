@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    role: {{ .Values.backend.labels.role }}
+spec:
+  replicas: {{ .Values.backend.replicaCount }}
+  strategy:
+    type: {{ .Values.backend.strategy.type }}
+    rollingUpdate:
+      maxSurge: {{ .Values.backend.strategy.rollingUpdate.maxSurge }}
+      maxUnavailable: {{ .Values.backend.strategy.rollingUpdate.maxUnavailable }}
+  selector:
+    matchLabels:
+      role: {{ .Values.backend.labels.role }}
+  template:
+    metadata:
+      labels:
+        role: {{ .Values.backend.labels.role }}
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.backend.containerPort }}

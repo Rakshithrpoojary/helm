@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    role: {{ .Values.frontend.labels.role }}
+spec:
+  replicas: {{ .Values.frontend.replicaCount }}
+  strategy:
+    type: {{ .Values.frontend.strategy.type }}
+    rollingUpdate:
+      maxSurge: {{ .Values.frontend.strategy.rollingUpdate.maxSurge }}
+      maxUnavailable: {{ .Values.frontend.strategy.rollingUpdate.maxUnavailable }}
+  selector:
+    matchLabels:
+      role: {{ .Values.frontend.labels.role }}
+  template:
+    metadata:
+      labels:
+        role: {{ .Values.frontend.labels.role }}
+    spec:
+      containers:
+        - name: frontend
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
+          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.frontend.containerPort }}
