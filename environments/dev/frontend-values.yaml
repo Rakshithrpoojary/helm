@@ -4,7 +4,7 @@ frontend:
 
   image:
     repository: 518283888975.dkr.ecr.ap-south-1.amazonaws.com/chat-frontend
-    tag: "7"
+    tag: "10"
     pullPolicy: Always
 
   containerPort: 80
