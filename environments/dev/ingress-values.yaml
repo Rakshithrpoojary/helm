@@ -15,5 +15,9 @@ ingress:
       port: 80
 
     - path: /
-      service: frontend
+      service: frontend-active
+      port: 80
+
+    - path: /frontend-preview
+      service: frontend-preview
       port: 80
