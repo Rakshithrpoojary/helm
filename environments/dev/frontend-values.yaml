@@ -4,7 +4,7 @@ frontend:
 
   image:
     repository: 518283888975.dkr.ecr.ap-south-1.amazonaws.com/chat-frontend
-    tag: "18"
+    tag: "19"
     pullPolicy: Always
 
   containerPort: 80
@@ -13,7 +13,7 @@ frontend:
     type: LoadBalancer
     port: 80
     targetPort: 80
-    
+
   activeservice:
     type: ClusterIP
     port: 80
