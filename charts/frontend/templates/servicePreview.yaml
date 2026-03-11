@@ -7,6 +7,6 @@ spec:
     - port: {{ .Values.frontend.service.port }}
       targetPort: {{ .Values.frontend.service.targetPort }}
       protocol: TCP
-  type: LoadBalancer
+  type: {{ .Values.frontend.service.type }}
   selector:
     role: {{ .Values.frontend.labels.role }}
