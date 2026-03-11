@@ -42,7 +42,7 @@ spec:
     canary:
       canaryService: frontend-preview
       stableService: frontend-active
-      traffivRouting:
+      trafficRouting:
         alb:
           stableIngress: mainlb
       steps:
