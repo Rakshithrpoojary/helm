@@ -1,6 +1,6 @@
 frontend:
 
-  replicaCount: 1
+  replicaCount: 5
 
   image:
     repository: 518283888975.dkr.ecr.ap-south-1.amazonaws.com/chat-frontend

@@ -39,7 +39,19 @@ spec:
           ports:
             - containerPort: {{ .Values.frontend.containerPort }}
   strategy:
-    blueGreen:
-      activeService: frontend-active
-      previewService: frontend-preview
-      autoPromotionEnabled: false
+    canary:
+      canaryService: frontend-preview
+      stableService: frontend-active
+      traffivRouting:
+        alb:
+          stableIngress: mainlb
+      steps:
+        - setWeight: 20
+        - pause: {}
+        - setWeight: 50
+        - pause: {}        
+        - setWeight: 100
+    # blueGreen:
+    #   activeService: frontend-active
+    #   previewService: frontend-preview
+    #   autoPromotionEnabled: false
