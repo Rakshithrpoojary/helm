@@ -44,7 +44,7 @@ spec:
       stableService: frontend-active
       trafficRouting:
         alb:
-          stableIngress: mainlb
+          ingress: mainlb
           servicePort: 80
       steps:
         - setWeight: 20
