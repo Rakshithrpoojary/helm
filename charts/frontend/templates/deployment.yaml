@@ -40,7 +40,7 @@ spec:
             - containerPort: {{ .Values.frontend.containerPort }}
   strategy:
     canary:
-      canaryService: frontend-preview
+      # canaryService: frontend-preview
       stableService: frontend-active
       trafficRouting:
         alb:
