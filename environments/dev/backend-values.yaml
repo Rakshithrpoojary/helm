@@ -4,7 +4,7 @@ backend:
 
   image:
     repository: 518283888975.dkr.ecr.ap-south-1.amazonaws.com/chat-backend
-    tag: "8"
+    tag: "9"
     pullPolicy: Always
 
   containerPort: 4000
