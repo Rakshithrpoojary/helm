@@ -4,9 +4,9 @@ metadata:
   name: frontend-preview
 spec:
   ports:
-    - port: {{ .Values.frontend.service.port }}
-      targetPort: {{ .Values.frontend.service.targetPort }}
+    - port: {{ .Values.frontend.previewservice.port }}
+      targetPort: {{ .Values.frontend.previewservice.targetPort }}
       protocol: TCP
-  type: LoadBalancer
+  type: {{ .Values.frontend.previewservice.type }}
   selector:
     role: {{ .Values.frontend.labels.role }}

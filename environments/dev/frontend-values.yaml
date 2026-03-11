@@ -9,7 +9,12 @@ frontend:
 
   containerPort: 80
 
-  service:
+  previewservice:
+    type: LoadBalancer
+    port: 80
+    targetPort: 80
+    
+  activeservice:
     type: ClusterIP
     port: 80
     targetPort: 80

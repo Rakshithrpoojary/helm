@@ -4,9 +4,9 @@ metadata:
   name: frontend-active
 spec:
   ports:
-    - port: {{ .Values.frontend.service.port }}
-      targetPort: {{ .Values.frontend.service.targetPort }}
+    - port: {{ .Values.frontend.activeservice.port }}
+      targetPort: {{ .Values.frontend.activeservice.targetPort }}
       protocol: TCP
-  type: {{ .Values.frontend.service.type }}
+  type: {{ .Values.frontend.activeservice.type }}
   selector:
     role: {{ .Values.frontend.labels.role }}
