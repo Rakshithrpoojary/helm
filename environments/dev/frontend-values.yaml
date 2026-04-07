@@ -3,7 +3,7 @@ frontend:
   replicaCount: 5
 
   image:
-    repository: 784318224800.dkr.ecr.ap-south-1.amazonaws.com/frontend
+    repository: 784318224800.dkr.ecr.ap-south-1.amazonaws.com/frontendapp
     tag: "7"
     pullPolicy: Always
 

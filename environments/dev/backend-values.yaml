@@ -3,7 +3,7 @@ backend:
   replicaCount: 1
 
   image:
-    repository: 784318224800.dkr.ecr.ap-south-1.amazonaws.com/backend
+    repository: 784318224800.dkr.ecr.ap-south-1.amazonaws.com/backendapp
     tag: "7"
     pullPolicy: Always
 
