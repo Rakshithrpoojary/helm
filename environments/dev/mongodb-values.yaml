@@ -2,7 +2,7 @@ mongo:
   name: mongo
   appLabel: mongodb
 
-  replicaCount: 4
+  replicaCount: 2
 
   image:
     repository: mongo
