@@ -21,6 +21,9 @@ ingress:
       port: 80
 
   previewpath:
+    - path: /api
+      service: backend
+      port: 80
     - path: /
       service: frontend-preview
       port: 80
