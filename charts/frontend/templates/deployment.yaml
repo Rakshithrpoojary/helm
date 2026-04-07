@@ -34,7 +34,7 @@ spec:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: "my-secrets"
+              secretProviderClass: "aws-secrets"
           ports:
             - containerPort: {{ .Values.frontend.containerPort }}
   strategy:
