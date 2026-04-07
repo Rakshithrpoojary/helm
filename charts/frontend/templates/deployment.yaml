@@ -28,15 +28,6 @@ spec:
               mountPath: /mnt/secrets
               readOnly: true
           imagePullPolicy: Always
-      volumes:
-        - name: secrets-store
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: "aws-secrets"
-          ports:
-            - containerPort: {{ .Values.frontend.containerPort }}
   strategy:
     canary:
       canaryService: frontend-preview
