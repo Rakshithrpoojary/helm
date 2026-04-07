@@ -4,7 +4,7 @@ backend:
 
   image:
     repository: 784318224800.dkr.ecr.ap-south-1.amazonaws.com/backendapp
-    tag: "7"
+    tag: "6"
     pullPolicy: Always
 
   containerPort: 4000
