@@ -11,7 +11,7 @@ spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
     # - host: rskshith.in
-     - http:
+    - http:
         paths:
 {{- range .Values.ingress.paths }}
           - path: {{ .path }}
