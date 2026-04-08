@@ -23,12 +23,13 @@ spec:
       containers:
         - name: backend
           image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
-          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           volumeMounts:
             - name: secrets-store
               mountPath: /mnt/secrets
               readOnly: true
           imagePullPolicy: Always
+          ports:
+            - containerPort: {{ .Values.backend.containerPort }}
       volumes:
         - name: secrets-store
           csi:
@@ -36,5 +37,3 @@ spec:
             readOnly: true
             volumeAttributes:
               secretProviderClass: "aws-secrets"
-          ports:
-            - containerPort: {{ .Values.backend.containerPort }}
