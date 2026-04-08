@@ -10,8 +10,8 @@ metadata:
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
-    # - host: rskshith.in
-    - http:
+    - host: rskshith.in
+      http:
         paths:
 {{- range .Values.ingress.paths }}
           - path: {{ .path }}
